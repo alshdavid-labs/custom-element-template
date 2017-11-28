@@ -1,18 +1,5 @@
-import { text } from './eg'
+//import "./lib/dom-renderer"
+import { TestElement } from './components/test-component/test.component'
+import "./lib/style-processor"
 
-class TestElement extends HTMLElement {
-    constructor() {
-        super();
-        this._editorElm
-        
-    }
-
-    connectedCallback(){
-        this._editorElm = document.createElement("div")
-        this._editorElm.innerHTML = text()
-        this.appendChild(this._editorElm)
-    }   
-}
-
-customElements.define('test-element', TestElement);
 

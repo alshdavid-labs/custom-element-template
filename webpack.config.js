@@ -1,4 +1,5 @@
-require("babel-polyfill");
+require("babel-polyfill")
+require("raw-loader")
 
 module.exports = {
     entry: ['./src/index.src.js'],
@@ -16,9 +17,13 @@ module.exports = {
                     plugins: [
                         "transform-custom-element-classes",
                         "transform-es2015-classes",
-                        "transform-object-rest-spread"
+                        "transform-object-rest-spread",
                     ]
                 }
+            },
+            {
+                test: [/\.html$/, /\.css$/],
+                use: 'raw-loader'
             }
         ]
     }
